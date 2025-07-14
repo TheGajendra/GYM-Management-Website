@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <title>GymSphere</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-header">
+                <div class="nav-logo">
+                    <a href="#">
+                        <img src="images/logo-white (2).png" alt="logo" class="logo-white" />
+                        <img src="images/logo-black (2).png" alt="logo" class="logo-dark" />
+                    </a>
+                </div>
+                <div class="nav-menu-btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#facility">Facilities</a></li>
+                <li><a href="#supplement">Store</a></li>
+                <li><a href="#team">Mentors</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="Store"><a href="suppliment-store.html">Store</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="login.html" class="btn">Login</a>
+            </div>
+        </nav>
+        <div class="section-container header-container" id="home">
+            <div class="header-content">
+                <h1>Welcome to GymSphere </h1>
+                <h2>Your Fitness Companion</h2>
+                <p>Transform your body and mind with our personalized gym management solutions. Whether you're a fitness
+                    enthusiast or a gym owner, GymSphere helps you track progress, manage memberships, and stay
+                    motivated every day.
+                </p>
+                <div class="header-btn">
+                    <button class="btn" id="join-now-btn">Join Now</button>
+                </div>
+            </div>
+            <div class="header-image">
+                <img src="images/header.png" alt="header">
+            </div>
+        </div>
+    </header>
+
+    <div class="about" id="about">
+        <div class="section-container about-container">
+            <div class="about-image">
+                <img src="images/about.png" alt="">
+            </div>
+            <div class="about-content">
+                <h2 class="section-header">Built by Fitness Enthusiasts. Designed for Gym Owners.</h2>
+                <p>GymSphere was created with one mission — to make fitness management smart, simple, and accessible.
+                    Whether you're running a small studio or a large facility, our system scales with your goals.</p>
+                <p>GymSphere is a complete cloud-based platform designed to simplify gym operations. From managing
+                    members and schedules to billing and diet planning, everything is just a click away. Stay organized,
+                    informed, and focused on what truly matters – results.
+                </p>
+                <div class="about-btn">
+                    <button class="btn">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="service" id="service">
+        <div class="section-container service-container">
+            <h2 class="section-header">Services We Provide</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span>01</span>
+                    <h4>Personal Training</h4>
+                    <p>Get one-on-one attention from certified trainers who tailor workouts to your goals, whether it’s
+                        weight loss, muscle gain, or strength building.</p>
+                </div>
+                <div class="service-card">
+                    <span>02</span>
+                    <h4> Strength & Cardio Equipment</h4>
+                    <p>Access a wide range of world-class equipment, from treadmills and ellipticals to weight machines
+                        and free weights — always clean and ready.</p>
+                </div>
+                <div class="service-card">
+                    <span>03</span>
+                    <h4>Nutrition & Diet Consultation</h4>
+                    <p>Fuel your fitness with expert dietary guidance. Our nutritionists create customized meal plans to
+                        match your training and lifestyle.</p>
+                </div>
+                <div class="service-card">
+                    <span>04</span>
+                    <h4>Steam, Sauna & Recovery Zone</h4>
+                    <p>Relax and recover after your workout in our steam room or recovery area. It’s the perfect end to
+                        a powerful session.</p>
+                </div>
+                <div class="service-image">
+                    <img src="images/section-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans" id="plans">
+        <div class="section-container plans-container">
+            <h2 class="section-header">Membership Plans</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <span>01</span>
+                    <h4>Basic Plan</h4>
+                    <p class="price">₹499 / Month</p>
+                    <ul class="plan-features">
+                        <li>✔ Access to Equipment</li>
+                        <li>✔ Locker Facility</li>
+                        <li>✔ 1 Diet Consultation</li>
+                    </ul>
+                    <button class="join-btn">Join Now</button>
+                </div>
+                <div class="plan-card">
+                    <span>02</span>
+                    <h4>Standard Plan</h4>
+                    <p class="price">₹999 / Month</p>
+                    <ul class="plan-features">
+                        <li>✔ Everything in Basic</li>
+                        <li>✔ Group Classes</li>
+                        <li>✔ Personal Trainer (2/week)</li>
+                    </ul>
+                    <button class="join-btn">Join Now</button>
+                </div>
+                <div class="plan-card">
+                    <span>03</span>
+                    <h4>Premium Plan</h4>
+                    <p class="price">₹1499 / Month</p>
+                    <ul class="plan-features">
+                        <li>✔ All Standard Benefits</li>
+                        <li>✔ Daily Trainer Support</li>
+                        <li>✔ Customized Diet Plans</li>
+                    </ul>
+                    <button class="join-btn">Join Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facility-container" id="facility">
+        <div class="facility-image">
+            <img src="images/facility.avif" alt="facilities">
+        </div>
+        <div class="facility-content">
+            <h2 class="section-header">Top-Class Gym Facilities</h2>
+            <p>At GymSphere, we take pride in offering state-of-the-art facilities designed to elevate your fitness
+                experience. Our spacious, air-conditioned workout zones are equipped with the latest strength and cardio
+                machines, ensuring a comfortable and motivating environment for every member. From dedicated free-weight
+                areas and functional training zones to steam rooms, locker facilities, and hygienic showers, every
+                corner of our gym is tailored for convenience and performance. Whether you're here for a quick workout
+                or a full-body transformation, our premium amenities support your journey every step of the way.
+            </p>
+            <p>It's not about quick fixes or temporary results; it's about adopting a lifestyle that fuels your passion
+                for self-improvement. With the right mindset and the right support, you can overcome obstacles, break
+                barriers, and achieve goals you never thought possible.</p>
+        </div>
+    </section>
+
+ <section class="supplement-store" id="supplement">
+    <div class="max-width">
+        <h2 class="section-header">Supplement Store</h2>
+        <div class="supplement-content">
+            <div class="supplement-text">
+                <h3>Boost Your Performance</h3>
+                <p>Explore our exclusive range of protein powders, vitamins, pre-workouts, and other premium
+                    supplements to level up your fitness journey.</p>
+                <a href="javascript:void(0);" onclick="redirectToStore()" class="btn-store">Visit Store</a>
+            </div>
+            <div class="supplement-img">
+                <img src="images/suppliement.png" alt="Supplements" onclick="redirectToStore()">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="section-container mentor-container" id="team">
+        <h2 class="section-header">Meet Our Expert Mentors</h2>
+        <div class="mentor-grid">
+            <div class="mentor-card">
+                <img src="images/mentor1.png" alt="">
+                <h4>Coach Alex</h4>
+                <p>Strength & Conditioning Expert</p>
+            </div>
+            <div class="mentor-card">
+                <img src="images/mentor2.png" alt="">
+                <h4>Coach Sara</h4>
+                <p>Fat Loss & Transformation Specialist</p>
+            </div>
+            <div class="mentor-card">
+                <img src="images/mwntor3.png" alt="">
+                <h4>Coach Marcus</h4>
+                <p>HIIT & Endurance Trainer</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="banner-wrapper">
+        <section class="banner" id="contact">
+            <div class="banner__content">
+                <div class="banner__text">
+                    <h2>CONTACT OUR TRAINING EXPERTS</h2>
+                    <p>Have questions about our programs? Want to schedule a consultation? Our team of fitness experts
+                        is
+                        ready to help you achieve your goals.</p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Our Location</h3>
+                                <p>123 Fitness Street, Health City</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Call Us</h3>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>info@fitnesstrainers.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner__form">
+                <h2 class="form-title">Get In Touch</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" placeholder="How can we help you?"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="footer">
+        <div class="section-container footer-container">
+            <div class="footer-col">
+                <a href="#" class="footer__logo">
+                    <img src="logo-white (2).png" alt="logo" />
+                </a>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-phone-line"></i></span> +91 0987654321
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-map-pin-line"></i></span> New Delhi India
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-mail-line"></i></span> info@fitnesspoint
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Plans</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Gym Hours</h4>
+                <ul class="footer-links">
+                    <li>Monday 5am - 10pm</li>
+                    <li>Tuseday 5am - 10pm</li>
+                    <li>Wednesday 5am - 10pm</li>
+                    <li>Thursday 5am - 10pm</li>
+                    <li>Friday 5am - 10pm</li>
+                    <li>Saturday 5am - 10pm</li>
+                    <li>Sunday 5am - 1pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bar">
+            Copyright © 2024 GymSphere. All rights reserved.
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+            signOut
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyBi7fL8Bq-UMdHLmCb4Dsa6uCN8ahS-s6k",
+        authDomain: "gymsphere-df953.firebaseapp.com",
+        projectId: "gymsphere-df953",
+        storageBucket: "gymsphere-df953.appspot.com",
+        messagingSenderId: "145617623638",
+        appId: "1:145617623638:web:ba2a41e88945b93b5db9f7"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Handle Login/Logout Button
+    const loginBtn = document.querySelector(".nav-btns .btn");
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            loginBtn.textContent = "Logout";
+            loginBtn.addEventListener("click", () => {
+                signOut(auth).then(() => {
+                    window.location.reload(); // refresh to update UI
+                });
+            });
+        } else {
+            loginBtn.textContent = "Login";
+            loginBtn.addEventListener("click", () => {
+                window.location.href = "login.html";
+            });
+        }
+    });
+
+    // Join/Register Buttons Redirection
+    const actionButtons = document.querySelectorAll("#join-now-btn, .join-btn, .about-btn .btn");
+
+    actionButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const user = auth.currentUser;
+            if (user) {
+                window.location.href = "register.html";
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+    });
+
+    // 👇 Make this global so it works from inline onclick()
+    window.redirectToStore = function () {
+        const user = auth.currentUser;
+        if (user) {
+            window.location.href = "suppliment-store.html";
+        } else {
+            window.location.href = "login.html";
+        }
+    };
+
+    </script>
+
+</body>
+
+</html>

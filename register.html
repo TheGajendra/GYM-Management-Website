@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymSphere | Membership Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="assests/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+            </div>
+            <h1>Gym Membership Registration</h1>
+            <p>Join our fitness community today and start your journey to a healthier you</p>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-steps">
+                <div class="step active">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">Personal</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">Health</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">Membership</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">4</div>
+                    <div class="step-text">Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">5</div>
+                    <div class="step-text">Confirm</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <!-- Step 1: Personal Information -->
+            <div class="form-section active" id="step1">
+                <h2 class="section-title">Personal Information</h2>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <div class="input-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Address</label>
+                        <input type="text" id="address" placeholder="Street Address" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>City</label>
+                        <input type="text" id="city" placeholder="City" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>State</label>
+                        <input type="text" id="state" placeholder="State" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>ZIP Code</label>
+                        <input type="text" id="zip" placeholder="ZIP Code" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="male" name="gender" value="male" checked>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button class="btn btn-next" onclick="validateStep(1)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Health Information -->
+            <div class="form-section" id="step2">
+                <h2 class="section-title">Health Information</h2>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Height (cm)</label>
+                        <input type="number" id="height" placeholder="175" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weight" placeholder="75" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Do you have any medical conditions?</label>
+                        <textarea id="medicalConditions" placeholder="List any medical conditions, allergies, or injuries..." rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Emergency Contact Name</label>
+                        <input type="text" id="emergencyName" placeholder="Emergency Contact" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Emergency Contact Phone</label>
+                        <input type="tel" id="emergencyPhone" placeholder="(123) 456-7890" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>How often do you exercise?</label>
+                        <select id="exerciseFrequency" required>
+                            <option value="">Select frequency</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">3-5 times a week</option>
+                            <option value="occasionally">1-2 times a week</option>
+                            <option value="rarely">Rarely</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Fitness Goals</label>
+                        <select id="fitnessGoals" required>
+                            <option value="">Select your primary goal</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="endurance">Endurance Training</option>
+                            <option value="flexibility">Flexibility</option>
+                            <option value="health">General Health</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Preferred Workout Time</label>
+                        <select id="workoutTime" required>
+                            <option value="">Select preferred time</option>
+                            <option value="morning">Morning (5am-10am)</option>
+                            <option value="afternoon">Afternoon (10am-3pm)</option>
+                            <option value="evening">Evening (3pm-8pm)</option>
+                            <option value="night">Night (8pm-12am)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button class="btn btn-prev" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-next" onclick="validateStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Membership Selection -->
+            <div class="form-section" id="step3">
+                <h2 class="section-title">Membership Plan</h2>
+                <p>Choose the membership plan that best fits your fitness goals</p>
+                
+                <div class="membership-cards">
+                    <div class="membership-card" onclick="selectMembership(this, 'basic')">
+                        <h3>Basic Plan</h3>
+                        <div class="price">$39<span>/month</span></div>
+                        <ul>
+                            <li>Access to gym facilities</li>
+                            <li>Free fitness assessment</li>
+                            <li>2 group classes per week</li>
+                            <li>Locker access</li>
+                            <li>No contract</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="membership-card selected" onclick="selectMembership(this, 'premium')">
+                        <h3>Premium Plan</h3>
+                        <div class="price">$69<span>/month</span></div>
+                        <ul>
+                            <li>All Basic features</li>
+                            <li>Unlimited group classes</li>
+                            <li>1 personal training session</li>
+                            <li>Sauna & steam room access</li>
+                            <li>Nutrition consultation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="membership-card" onclick="selectMembership(this, 'elite')">
+                        <h3>Elite Plan</h3>
+                        <div class="price">$99<span>/month</span></div>
+                        <ul>
+                            <li>All Premium features</li>
+                            <li>4 personal training sessions</li>
+                            <li>24/7 gym access</li>
+                            <li>Comprehensive body analysis</li>
+                            <li>Recovery services discount</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Membership Duration</label>
+                        <select id="membershipDuration" required>
+                            <option value="1">1 Month</option>
+                            <option value="3" selected>3 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">12 Months (15% discount)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button class="btn btn-prev" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-next" onclick="validateStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 4: Payment Information -->
+            <div class="form-section" id="step4">
+                <h2 class="section-title">Payment Details</h2>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Cardholder Name</label>
+                        <div class="input-icon">
+                            <i class="fas fa-credit-card"></i>
+                            <input type="text" id="cardName" placeholder="Name on card" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Card Number</label>
+                        <div class="input-icon">
+                            <i class="fas fa-credit-card"></i>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Expiration Date</label>
+                        <input type="month" id="cardExpiry" placeholder="MM/YY" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>CVV</label>
+                        <input type="text" id="cardCVV" placeholder="123" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Billing Address</label>
+                        <input type="text" id="billingAddress" placeholder="Billing Address" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Promo Code (if any)</label>
+                        <input type="text" id="promoCode" placeholder="Enter promo code">
+                    </div>
+                </div>
+                
+                <div class="summary-container">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Premium Membership</span>
+                        <span>$69.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>3 Months</span>
+                        <span>$207.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Registration Fee</span>
+                        <span>$29.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span>$236.00</span>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button class="btn btn-prev" onclick="prevStep(4)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-next" id="submitBtn" onclick="submitRegistration()">Complete Registration <i class="fas fa-check"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 5: Confirmation -->
+            <div class="form-section" id="step5">
+                <div class="confirmation">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Registration Complete!</h2>
+                    <p>Thank you for joining GymSphere. Your membership details have been sent to your email. We can't wait to help you achieve your fitness goals!</p>
+                    <button class="btn" style="background: var(--accent-color); padding: 12px 40px;">
+                        <i class="fas fa-download"></i> Download Membership Card
+                    </button>
+                </div>
+                
+                <div class="form-navigation">
+                    <button class="btn btn-prev" onclick="prevStep(5)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn" style="background: var(--primary-color);">
+                        <i class="fas fa-tachometer-alt"><a href="index.html"></a></i> Go to Dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="assests/register.js">
+            </script>
+</body>
+</html>

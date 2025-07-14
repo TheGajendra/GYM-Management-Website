@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "title": { "stringValue": "Reminder" },
+    "message": { "stringValue": "Pay your fee this week" },
+    "priority": { "stringValue": "low" },
+    "recipientType": { "stringValue": "email" },
+    "recipientEmail": { "stringValue": "member@gmail.com" },
+    "timestamp": { "timestampValue": "2025-06-17T13:00:00Z" }
+  }
+}

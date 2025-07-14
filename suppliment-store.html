@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerGym Supplements | Fuel Your Gains</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assests/suppliment.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Gym<span>Sphere</span></h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#products" class="active">Supplements</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Fuel Your Gains</h2>
+        <p>Premium supplements to maximize your performance, recovery, and results. Scientifically formulated for athletes.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container" id="products">
+        <h2 class="section-title">Our Supplements</h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be added dynamically -->
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div class="cart-container" id="cartContainer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added dynamically -->
+            <div class="empty-cart-message" id="emptyCartMessage">
+                <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Your cart is empty</h3>
+                <p>Start adding some products!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">Gym<span>Sphere</span></div>
+                <p class="footer-about">Your ultimate destination for fitness training, nutrition guidance, and premium supplements to help you achieve your fitness goals.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">About Us</a></li>
+                    <li><a href="index.html">Trainers</a></li>
+                    <li><a href="index.html">Membership</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Supplements</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Protein</a></li>
+                    <li><a href="#">Pre-Workout</a></li>
+                    <li><a href="#">Recovery</a></li>
+                    <li><a href="#">Vitamins</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 New Delhi India</li>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@GymSphere.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 5am - 11pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 GymSphere. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assests/suppliment.js"></script>
+    
+</body>
+</html>
