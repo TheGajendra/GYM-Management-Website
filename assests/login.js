@@ -1,12 +1,4 @@
 // Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyBi7fL8Bq-UMdHLmCb4Dsa6uCN8ahS-s6k",
-    authDomain: "gymsphere-df953.firebaseapp.com",
-    projectId: "gymsphere-df953",
-    storageBucket: "gymsphere-df953.firebasestorage.app",
-    messagingSenderId: "145617623638",
-    appId: "1:145617623638:web:ba2a41e88945b93b5db9f7"
-};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
